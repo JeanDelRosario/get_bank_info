@@ -2,7 +2,7 @@ import os
 
 from helpers.BankScrapper import BankScrapper
 from helpers.DataCreator import DataCreator
- 
+
 user = os.environ['BUSER']
 password = os.environ['BPASSWORD']
 

@@ -1,0 +1,74 @@
+-s is_transaction_between_accounts | False
+-a 200727002450100736 | Transaction id  | is_transaction_between_accounts |  True
+
+-s is_credit_card_payment | False
+-l PAGO RECIBIDO VIA | Concept | is_credit_card_payment | True
+-l PAGO TARJETA | Concept | is_credit_card_payment | True
+
+-s category | Others
+-l RETIRO ATM | Concept | category | Retiro ATM
+
+-l COBRO IMP DGII 0.15%| Concept | category | Comision 0.15%
+
+-l UBER | Concept | category | Transportation
+
+-l AMZN | Concept | category | Amazon
+
+-l HUMANO SEGUROS | Concept | category | Seguro Vida
+
+-l GOOGLE | Concept | category | Online Applicaltions
+-l TODOIST | Concept | category | Online Applicaltions
+
+-l SUPERMERCADO | Concept | category | Groceries
+-l SM NACIONAL | Concept | category | Groceries
+-l SM BRAVO | Concept | category | Groceries
+-l SM POLA | Concept | category | Groceries
+-l PRICESMART | Concept | category | Groceries
+
+-l LA LOCANDA | Concept | category | Fast food
+-l JADE | Concept | category | Fast food
+-l WENDYS | Concept | category | Fast food
+-l UBER EATS | Concept | category | Fast food
+-l PEPITO AREPA | Concept | category | Fast food
+-l ADRIAN TROPICAL | Concept | category | Fast food
+-l LITTLE CAESARS | Concept | category | Fast food
+-l KENTUCKY FRIED CHICKEN | Concept | category | Fast food
+-l PIZZARELLI | Concept | category | Fast food
+-l CACHAREPA | Concept | category | Fast food
+-l GREEN BOWL | Concept | category | Fast food
+-l FORNO BRAVO | Concept | category | Fast food
+-l PAPA JOHN | Concept | category | Fast food
+-l CHEF PEPPER | Concept | category | Fast food
+-l HELADOS BON | Concept | category | Fast food
+
+-l AEROPAQ | Concept | category | Delivery
+
+-l CLARO RECAR | Concept | category | Internet mobile
+
+-l CLARO PAGO 8296103165 | Concept | category | Telecomunication
+
+-l CLARO PAGO 8095330584 | Concept | category | Telecomunication
+
+-l 4 JACK S BAR | Concept | category | Bars
+-l LIQUOR STORE | Concept | category | Bars
+-l DRINK 2 GO | Concept | category | Bars
+
+-l PETROMOVIL | Concept | category | Gas
+-l SUNIX | Concept | category | Gas
+-l TOTAL | Concept | category | Gas
+
+-l SMARTFIT | Concept | category | Gym
+
+-l ANTHONY | Concept | category | Clothes
+-l MALAQUIAS | Concept | category | Clothes
+-l ZARA | Concept | category | Clothes
+
+-l AIRBNB | Concept | category | AirBnB
+
+-a 21526159816 | Transaction id | category | Car Expenses
+
+-a 21585907829 | Transaction id | category | Parents
+
+-r Concept.str.upper().str.contains("MC") and Concept.str.upper().str.contains("DONALD") | category | Fast food
+
+-r Concept.str.upper().str.contains("TRANSFERENCIA TERCERO") and Debit == 10000 | category | Grandma Money

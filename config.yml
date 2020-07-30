@@ -1,0 +1,25 @@
+bank_login:
+  # Holds the name of the environment variable where the bank credentials are stored.
+  user_var: BUSER
+  password_var: BPASSWORD
+
+bank_scrapper:
+  # Amount of debit/savings and credit accounts the user has. This is critical for good behavior of the program.
+  debit_accounts: 2
+  credit_accounts: 2
+
+data_creator:
+  # Configuration for the DataCreator class. Holds the exchange rate from DOP to USD,
+  # which are the dollar savings accounts to apply the exchange rate to the transactions
+  # and lastly which is the path to the rules file which defines how to categorize transactions.
+  dollar_saving_accounts:
+    - 9600863829
+  dollar_to_usd_rate: 57.20
+  rules_path: rules.txt
+
+Gsheet:
+  # If enabled it will try and upload the resulting pandas Dataframe to Google Sheet
+  # using the specified creditial json file and to the specified Google Sheet using its Google Sheet Id.
+  enabled: True
+  Gsheet_credentials_file: credentials.json
+  Gsheet_Id: 1I-DXBkhXE6TAtmhzgEF-RmUrZDlKrWexEJXYdJXiYho

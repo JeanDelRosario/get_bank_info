@@ -8,7 +8,8 @@
 -s category | Others
 -l RETIRO ATM | Concept | category | Retiro ATM
 
--l COBRO IMP DGII 0.15%| Concept | category | Comision 0.15%
+-l COBRO IMP DGII 0.15%| Concept | category | Comision
+-l COMISION| Concept | category | Comision
 
 -l UBER | Concept | category | Transportation
 

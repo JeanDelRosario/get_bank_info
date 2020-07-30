@@ -1,6 +1,5 @@
 import os
-
-import configuration as cfg
+from configuration import configuration as cfg
 
 from helpers.BankScrapper import BankScrapper
 from helpers.DataCreator import DataCreator

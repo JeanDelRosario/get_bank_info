@@ -15,11 +15,11 @@ data_creator:
   dollar_saving_accounts:
     - 9600863829
   dollar_to_usd_rate: 57.20
-  rules_path: rules.txt
+  rules_path: configuration/rules.txt
 
 Gsheet:
   # If enabled it will try and upload the resulting pandas Dataframe to Google Sheet
   # using the specified creditial json file and to the specified Google Sheet using its Google Sheet Id.
   enabled: True
-  Gsheet_credentials_file: credentials.json
+  Gsheet_credentials_file: configuration/credentials.json
   Gsheet_Id: 1I-DXBkhXE6TAtmhzgEF-RmUrZDlKrWexEJXYdJXiYho

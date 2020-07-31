@@ -25,7 +25,7 @@ def implement_rules(self, df: pd.DataFrame, rules_path:str='rules.txt') -> pd.Da
       elif flag == '-r':
         df = raw_flag(df, line)
       else:
-        print("No flags to process in rules.txt")
+        print("No flags in line to process in rules.txt")
 
   return df
       

@@ -1,3 +1,7 @@
+"""
+Import configuration information from config.yml file and gets it in the right format to be used by get_info.py
+"""
+
 import yaml
 import os
 

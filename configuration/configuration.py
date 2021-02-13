@@ -8,10 +8,9 @@ import os
 with open("config.yml", "r") as ymlfile:
     cfg = yaml.load(ymlfile)
 
-user = os.environ[cfg['bank_login']['user_var']]
-password = os.environ[cfg['bank_login']['password_var']]
+reports_download_directory = 'helpers\DataCreator\downloads'
 
-reports_download_directory = 'helpers/DataCreator/downloads'
+chrome_driver_path = cfg['chrome_driver_path']
 
 debit_accounts =  cfg['bank_scrapper']['debit_accounts'] # How many accounts you have. If this number is set incorrectly, the script can crash and/or give innacurate information.
 credit_accounts = cfg['bank_scrapper']['credit_accounts'] # How many credit card accounts you have.

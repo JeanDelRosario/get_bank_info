@@ -4,7 +4,7 @@ import sys
 from selenium import webdriver
 from time import sleep
 
-sys.path.append('helpers/BankScrapper')
+sys.path.append('.\helpers\BankScrapper')
 
 class BankScrapper():
 
@@ -23,6 +23,8 @@ class BankScrapper():
 
     current_dir = os.getcwd()
     full_path = os.path.join(current_dir, download_directory)
+
+    print(f'Download directory {full_path}')
 
     driver = self.set_up_driver(chromedriver_path, full_path)
 

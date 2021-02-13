@@ -1,11 +1,18 @@
 -s is_transaction_between_accounts | False
--a 200727002450100736 | Transaction id  | is_transaction_between_accounts |  True
+-a 200727002450100736, 201009002450050263 | Transaction id  | is_transaction_between_accounts |  True
 
 -s is_credit_card_payment | False
 -l PAGO RECIBIDO VIA | Concept | is_credit_card_payment | True
 -l PAGO TARJETA | Concept | is_credit_card_payment | True
 
 -s category | Others
+-l INAGROVET | Concept | category | Veterinaria
+-l VETERINARIA | Concept | category | Veterinaria
+
+-l STEAMGAMES | Concept | category | Ocio
+
+-l ROMWE | Concept | category | Novia
+
 -l RETIRO ATM | Concept | category | Retiro ATM
 
 -l COBRO IMP DGII 0.15%| Concept | category | Comision
@@ -14,6 +21,7 @@
 -l UBER | Concept | category | Transportation
 
 -l AMZN | Concept | category | Amazon
+-l Amazon | Concept | category | Amazon
 
 -l HUMANO SEGUROS | Concept | category | Seguro Vida
 
@@ -25,6 +33,7 @@
 -l SM BRAVO | Concept | category | Groceries
 -l SM POLA | Concept | category | Groceries
 -l PRICESMART | Concept | category | Groceries
+-l LA SIRENA | Concept | category | Groceries
 
 -l LA LOCANDA | Concept | category | Fast food
 -l JADE | Concept | category | Fast food
@@ -41,14 +50,18 @@
 -l PAPA JOHN | Concept | category | Fast food
 -l CHEF PEPPER | Concept | category | Fast food
 -l HELADOS BON | Concept | category | Fast food
-
+-l KFC | Concept | category | Fast food
+-l POLLOS VICTORINA | Concept | category | Fast food
+ 
 -l AEROPAQ | Concept | category | Delivery
+-l BM CARGO | Concept | category | Delivery
 
 -l CLARO RECAR | Concept | category | Internet mobile
 
+
 -l CLARO PAGO 8296103165 | Concept | category | Telecomunication
 
--l CLARO PAGO 8095330584 | Concept | category | Telecomunication
+-l CLARO PAGO | Concept | category | Telecomunication
 
 -l 4 JACK S BAR | Concept | category | Bars
 -l LIQUOR STORE | Concept | category | Bars
@@ -57,6 +70,7 @@
 -l PETROMOVIL | Concept | category | Gas
 -l SUNIX | Concept | category | Gas
 -l TOTAL | Concept | category | Gas
+-l AXXON | Concept | category | Gas
 
 -l SMARTFIT | Concept | category | Gym
 
@@ -66,10 +80,23 @@
 
 -l AIRBNB | Concept | category | AirBnB
 
--a 21526159816 | Transaction id | category | Car Expenses
+-l CARGO POR EMISION | Concept | category | Gastos Tarjeta Credito
+-l CARGO POR COBERTURA DE SEGURO | Concept | category | Gastos Tarjeta Credito
+
+-a 21526159816, 2327112342630 | Transaction id | category | Car Expenses
+-a 1139112343569 | Transaction id | category | Fast food
+-a 21801646484 | Transaction id | category | Netflix
 
 -a 21585907829 | Transaction id | category | Parents
 
 -r Concept.str.upper().str.contains("MC") and Concept.str.upper().str.contains("DONALD") | category | Fast food
 
 -r Concept.str.upper().str.contains("TRANSFERENCIA TERCERO") and Debit == 10000 | category | Grandma Money
+
+-r Reference == 543629 and Debit == 7990 | category | Parents
+-r Concept.str.upper().str.contains("ORQUIDEA SANTO DOMINGO C DISTRITO NACINDO") and Debit == 2745 | category | Parents
+
+-r `Transaction id` == 21924234427 and Debit == 5000 | category | Groceries
+-r Concept.str.upper().str.contains("JUMBO AGORA MALL") and Debit == 1419.91 | category | Groceries
+
+-r Credit == 45047.03 and Balance == 49777.52 | is_transaction_between_accounts |  False

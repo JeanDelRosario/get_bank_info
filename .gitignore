@@ -17,3 +17,11 @@ src/*.egg-info
 lib
 lib64
 env
+
+.DS_Store
+configuration/.DS_Store
+helpers/.DS_Store
+
+*.exe
+
+debug*

@@ -4,8 +4,11 @@ from configuration import configuration as cfg
 from helpers.BankScrapper import BankScrapper
 from helpers.DataCreator import DataCreator
 
-bank_scrapper = BankScrapper(download_directory=cfg.reports_download_directory, debit_accounts=cfg.debit_accounts, credit_accounts=cfg.credit_accounts)
-bank_scrapper.login(cfg.user, cfg.password)
+user = input("Please enter your username:\n")
+password = input("Please enter your password:\n")
+
+bank_scrapper = BankScrapper(chromedriver_path=cfg.chrome_driver_path, download_directory=cfg.reports_download_directory, debit_accounts=cfg.debit_accounts, credit_accounts=cfg.credit_accounts)
+bank_scrapper.login(user, password)
 bank_scrapper.get_accounts_reports()
 bank_scrapper.get_credit_cards_reports()
 bank_scrapper.close()

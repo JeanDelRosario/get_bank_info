@@ -92,7 +92,7 @@ def raw_flag(df: pd.DataFrame, line: str) -> pd.DataFrame:
   arguments = line.split('|')
 
   if len(arguments) != 3:
-    print("Error in -a flag rules.txt")
+    print("Error in -r flag rules.txt")
 
   query, column, value = [arg.strip() for arg in arguments]
 

@@ -1,10 +1,13 @@
 import os
 import shutil
 import sys
+from pathlib import Path
 from selenium import webdriver
 from time import sleep
 
-sys.path.append('.\helpers\BankScrapper')
+bank_scrapper_path = Path("helpers/BankScrapper")
+
+sys.path.append(str(bank_scrapper_path))
 
 class BankScrapper():
 

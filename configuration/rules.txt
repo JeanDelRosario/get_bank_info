@@ -1,13 +1,20 @@
 -s is_transaction_between_accounts | False
 -a 200727002450100736, 201009002450050263 | Transaction id  | is_transaction_between_accounts |  True
 
+-l COMPRA DIVISA | Concept | is_transaction_between_accounts |  True
+
+
 -s is_credit_card_payment | False
 -l PAGO RECIBIDO VIA | Concept | is_credit_card_payment | True
 -l PAGO TARJETA | Concept | is_credit_card_payment | True
 
 -s category | Others
--l INAGROVET | Concept | category | Veterinaria
--l VETERINARIA | Concept | category | Veterinaria
+-l INAGROVET | Concept | category | Veterinary
+-l VETERINARIA | Concept | category | Veterinary
+
+-a 22747676741, 22616383982 | Transaction id  | category |  Veterinary
+
+-l BINANCE | Concept | category | Investment Crypto
 
 -l STEAMGAMES | Concept | category | Ocio
 
@@ -21,7 +28,7 @@
 -l UBER | Concept | category | Transportation
 
 -l AMZN | Concept | category | Amazon
--l Amazon | Concept | category | Amazon
+-l AMAZON | Concept | category | Amazon
 
 -l HUMANO SEGUROS | Concept | category | Seguro Vida
 
@@ -34,9 +41,11 @@
 -l SM POLA | Concept | category | Groceries
 -l PRICESMART | Concept | category | Groceries
 -l LA SIRENA | Concept | category | Groceries
+-a 22595451646 | Transaction id  | category |  Groceries
 
 -l LA LOCANDA | Concept | category | Fast food
 -l JADE | Concept | category | Fast food
+-l THE CRIME | Concept | category | Fast food
 -l WENDYS | Concept | category | Fast food
 -l UBER EATS | Concept | category | Fast food
 -l PEPITO AREPA | Concept | category | Fast food
@@ -52,11 +61,14 @@
 -l HELADOS BON | Concept | category | Fast food
 -l KFC | Concept | category | Fast food
 -l POLLOS VICTORINA | Concept | category | Fast food
+-l CHANCHO GUSTO | Concept | category | Fast food
  
 -l AEROPAQ | Concept | category | Delivery
 -l BM CARGO | Concept | category | Delivery
 
 -l CLARO RECAR | Concept | category | Internet mobile
+
+-l INTERES | Concept | category | Interest
 
 
 -l CLARO PAGO 8296103165 | Concept | category | Telecomunication
@@ -66,6 +78,15 @@
 -l 4 JACK S BAR | Concept | category | Bars
 -l LIQUOR STORE | Concept | category | Bars
 -l DRINK 2 GO | Concept | category | Bars
+-l LA CASA DE LA CANA | Concept | category | Bars
+
+-l UBC | Concept | category | University
+-l SFU | Concept | category | University
+-l UNIVERSITY OF CALGARY | Concept | category | University
+-l UVIC | Concept | category | University
+-l ETS | Concept | category | University
+
+-l OPTICA | Concept | category | Eyes
 
 -l PETROMOVIL | Concept | category | Gas
 -l SUNIX | Concept | category | Gas
@@ -77,6 +98,7 @@
 -l ANTHONY | Concept | category | Clothes
 -l MALAQUIAS | Concept | category | Clothes
 -l ZARA | Concept | category | Clothes
+-l JUMBO | Concept | category | Clothes
 
 -l AIRBNB | Concept | category | AirBnB
 
@@ -98,5 +120,8 @@
 
 -r `Transaction id` == 21924234427 and Debit == 5000 | category | Groceries
 -r Concept.str.upper().str.contains("JUMBO AGORA MALL") and Debit == 1419.91 | category | Groceries
+-r Concept.str.upper().str.contains("JUMBO AGORA MALL") and Debit == 2158.69 | category | Groceries
 
 -r Credit == 45047.03 and Balance == 49777.52 | is_transaction_between_accounts |  False
+-r Date == '2020-12-07' and Debit == 85800 | is_transaction_between_accounts |  True
+-r Date == '2020-12-07' and Credit == 85500 |  is_transaction_between_accounts |  True

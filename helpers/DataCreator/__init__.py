@@ -5,9 +5,12 @@ import pandas as pd
 import numpy as np
 import codecs
 from csv import reader
+from pathlib import Path
 from typing import List
 
-sys.path.append('helpers/DataCreator')
+bank_scrapper_path = Path("helpers/DataCreator")
+
+sys.path.append(str(bank_scrapper_path))
 
 class DataCreator():
 
@@ -46,7 +49,12 @@ class DataCreator():
     cols = [cols[-1]] + cols[:-1]
     self.final_df = self.final_df[cols]
 
-    self.final_df.to_csv('database/bank_transactions.csv')
+    database_path = Path("database")
+
+    if not os.path.exists(database_path):
+        os.mkdir(database_path)
+
+    self.final_df.to_csv( str(database_path / 'bank_transactions.csv') )
 
     self.clean_directory(self.csv_path)
 

@@ -11,12 +11,14 @@
 -s category | Others
 -l INAGROVET | Concept | category | Veterinary
 -l VETERINARIA | Concept | category | Veterinary
+-l AGRODIZA | Concept | category | Veterinary
 
 -a 22747676741, 22616383982 | Transaction id  | category |  Veterinary
 
 -l BINANCE | Concept | category | Investment Crypto
 
 -l STEAMGAMES | Concept | category | Ocio
+-a 22468276762, 22238585041 | Transaction id | category | Ocio
 
 -l ROMWE | Concept | category | Novia
 
@@ -52,7 +54,7 @@
 -l ADRIAN TROPICAL | Concept | category | Fast food
 -l LITTLE CAESARS | Concept | category | Fast food
 -l KENTUCKY FRIED CHICKEN | Concept | category | Fast food
--l PIZZARELLI | Concept | category | Fast food
+-l PIZZA | Concept | category | Fast food
 -l CACHAREPA | Concept | category | Fast food
 -l GREEN BOWL | Concept | category | Fast food
 -l FORNO BRAVO | Concept | category | Fast food
@@ -99,6 +101,7 @@
 -l MALAQUIAS | Concept | category | Clothes
 -l ZARA | Concept | category | Clothes
 -l JUMBO | Concept | category | Clothes
+-l PLAZA LAMA 27 DE FEBRERO | Concept | category | Clothes
 
 -l AIRBNB | Concept | category | AirBnB
 
@@ -125,3 +128,5 @@
 -r Credit == 45047.03 and Balance == 49777.52 | is_transaction_between_accounts |  False
 -r Date == '2020-12-07' and Debit == 85800 | is_transaction_between_accounts |  True
 -r Date == '2020-12-07' and Credit == 85500 |  is_transaction_between_accounts |  True
+-r Date == '2020-10-09' and Debit == 85800 | is_transaction_between_accounts |  True
+-r Date == '2020-10-09' and Credit == 85500 |  is_transaction_between_accounts |  True
